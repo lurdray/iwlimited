@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+ <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+     <header class="top-area single-page" id="home">
+        {% for headers in header %}
+        <div class="top-area-bg" style=" background-image: url({{ headers.image.url }});"></div>
+        {% endfor %}
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+        <div class="welcome-area">
+            <div class="area-bg"></div>
+            <div class="container">
+                <div class="row flex-v-center">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="welcome-text text-center">
+                            <h2>Our Collections</h2>
+                            <ul class="page-location">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>/</li>
+                                <li><a href="{% url 'projects' %}">Projects</a></li>
+                            </ul>
+                        </div>
+                        <p class="text-center" style="margin-top: 125px;">Kindly Scroll Down for More!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--END TOP AREA-->
+
+    <!--ABOUT DETAILS AREA-->
+    <section class="about-details-area section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                    <div class="area-title text-center wow fadeIn">
+                        <h2>Our Collections</h2>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <ul class="about-details-menu">
+                        <li class="active"><a data-toggle="tab" href="#bedrooms" style="font-size: 15px">Bedroom</a></li>
+                        <li><a data-toggle="tab" href="#dining" style="font-size: 15px">Dining</a></li>
+                        <li><a data-toggle="tab" href="#Doors" style="font-size: 15px">Door</a></li>
+                         <li><a data-toggle="tab" href="#Kitchens" style="font-size: 15px">Kitchen</a></li>
+                        <li><a data-toggle="tab" href="#living_rooms" style="font-size: 15px">Living Room</a></li>
+                        <li><a data-toggle="tab" href="#offices" style="font-size: 15px">Office</a></li>
+                        <li><a data-toggle="tab" href="#wardrobes" style="font-size: 15px">Wardrobe</a></li>
+                       
+                        
+                       
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="tab-content about-details-content">
+                        <div id="bedrooms" class="about-company tab-pane fade in active">
+                            <div class="row">
+                                {% for item in bedrooms %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                     <p style="color: #565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div id="living_rooms" class="company-history tab-pane fade">
+                             <div class="row">
+                                {% for item in living_rooms %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+
+                                    </div>
+                                     <p style="color: #565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="wardrobes" class="company-history tab-pane fade">
+                             <div class="row">
+                                {% for item in wardrobes %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                     <p style="color: #565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="offices" class="team-list tab-pane fade">
+                            <div class="row">
+                                {% for item in offices %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                     <p style="color:#565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="dinings" class="team-list tab-pane fade">
+                            <div class="row">
+                                {% for item in dinnings %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                     <p style="color: #565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="Kitchens" class="team-list tab-pane fade">
+                            <div class="row">
+                                {% for item in kitchens %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                         <p style="color: #565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+                                
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="Doors" class="support-content tab-pane fade">
+                            <div class="row">
+                                {% for item in doors %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ item.image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                     <p style="color: #565655; font-size: 25px">{{item.title}}</p>
+                                </div>
+                                {% endfor %}
+                            
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--ABOUT DETAILS AREA END-->
+
+   
+
+
+
+    <!--FOOER AREA-->
+{% endblock %}

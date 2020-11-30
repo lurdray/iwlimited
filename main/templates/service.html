@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+        .single-blog{
+            position: relative;
+
+
+            height: 375px;
+            width: 360px;
+
+            transition: 0.3s ease-out;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+        }
+        .single-blog .blog-image{
+            position: relative;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .single-blog .blog-image img{
+            position: relative;
+            top: 0;
+
+            width: 100%;
+            height: 90%;
+            display: block;
+            transition: 0.9s;
+        }
+        .single-blog .blog-details1{
+            position: absolute;
+            bottom: 0;
+
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            background-color: purple;
+            color: #fff;
+            transition: all 0.9s cubic-bezier(.48, -0.28, 0.41, 1.4);
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        .single-blog:hover .blog-details1{
+            width: 100%;
+            height: 75%;
+            transition: 0.9s;
+            bottom: 0;
+
+        }
+
+        
+    </style>
+       <header class="top-area single-page" id="home">
+         {% for headers in header %}
+        <div class="top-area-bg" style=" background-image: url({{ headers.image.url }});"></div>
+        {% endfor %}
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+
+        <div class="welcome-area">
+            <div class="area-bg"></div>
+            <div class="container">
+                <div class="row flex-v-center">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="welcome-text text-center">
+                            <h2>Our Services</h2>
+                            <ul class="page-location">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>/</li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                            </ul>
+                        </div>
+                        <p class="text-center" style="margin-top: 125px;">Kindly Scroll Down for More!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!--SERVICE AREA-->
+    <section class="service-area-two section-padding gray-bg">
+        <div class="container">
+            <div class="row">
+                {% for setting in settings %}
+                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                    <div class="area-title text-center wow fadeIn">
+                        <h2 style="color: #222222">Our Services</h2>
+
+                        <p style="color:#3c4a62"><strong>{{ setting.services }}</strong></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 bloging">
+                    {% for services in service %}
+                    <div class="service-content wow fadeIn">
+                        <img src="{{ services.image.url }}" alt="">
+                    </div>
+                    {% endfor %}
+                    
+                   
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                    {% for setting in settings %}
+                    <div class="service-two-content wow fadeIn">
+                        
+                            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border-left border-right border-bottom">
+                                    <div class="service-icon-two"><i class="fa fa-bar-chart"></i></div>
+                                    <h4>Measurement</h4>
+                                    <p>{{ setting.measurement }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border-left border-right border-bottom">
+                                    <div class="service-icon-two"><i class="fa fa-cogs"></i></div>
+                                     <h4>Design</h4>
+                                    <p>{{ setting.design }}<p style="color: purple"></p></p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row no-margin">
+                            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border">
+                                    <div class="service-icon-two"><i class="fa fa-truck"></i></div>
+                                    <h4>Fast Delivery</h4>
+                                    <p>{{ setting.delivery }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border-top border-bottom border-right">
+                                    <div class="service-icon-two"><i class="fa fa-plug"></i></div>
+                                     <h4>Installation</h4>
+                                    <p>{{ setting.installation }}</p>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SERVICE AREA END-->
+
+    <!--PROMO AREA-->
+    <section class="promo-area">
+        <div class="promo-bottom-area section-padding">
+            {% for banners in banner %}
+            <div class="promo-botton-area-bg" data-stellar-background-ratio="0.6" style="background-image: url({{ banners.image.url }})"></div>
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 text-center">
+                        <div class="promo-bottom-content wow fadeIn">
+                            <h2>Interior woodwork limited</h2>
+                            <a href="{% url 'contact' %}" class="read-more">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PROMO AREA END-->
+
+    <!--BLOG AREA-->
+     <section class="blog-area gray-bg padding-top">
+        <div class="container">
+            <div class="row">
+                         <div class="welcome-text text-center">
+                            <h2 style="color: #222222">Our Areas of Expertise</h2>
+                        </div><hr>
+                            <br>
+                                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="about-history-content history-list">
+                                        {% for rs in servicepage %}
+                                        <div class="single-history">
+                                            <div class="history-year">
+                                                <p>{{ rs.number }}</p>
+                                            </div>
+                                            <h4>{{ rs.title }}</h4>
+                                            <p>{{ rs.caption|safe }}</p>
+                                        </div>
+                                        {% endfor %}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    <br><br>
+</section>
+
+
+    <!--BLOG AREA END-->
+    <style type="text/css">
+        .single-blog{
+            position: relative;
+            height: 390px;
+            width: 100%;
+
+            transition: 0.3s ease-out;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+        }
+        .single-blog .blog-image{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .single-blog .blog-image img{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            display: block;
+            transition: 0.5s;
+        }
+        .single-blog .blog-details{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            background-color: #f2f2f2;
+            color: black !important;
+            transition: all 0.5s cubic-bezier(.48, -0.28, 0.41, 1.4);
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        .single-blog:hover .blog-details{
+            width: 100%;
+            height: 75%;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        
+    </style>
+
+
+    
+
+    {% endblock %}

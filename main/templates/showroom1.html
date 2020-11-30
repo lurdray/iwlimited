@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+     <header class="top-area single-page" id="home">
+         {% for headers in header %}
+        <div class="top-area-bg" style=" background-image: url({{ headers.image.url }});"></div>
+        {% endfor %}
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+        <div class="welcome-area">
+            <div class="area-bg"></div>
+            <div class="container">
+                <div class="row flex-v-center">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="welcome-text text-center">
+                            <h2>Our Showroom</h2>
+                            <ul class="page-location">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>/</li>
+                                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <p class="text-center" style="margin-top: 125px;">Kindly Scroll Down for More!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--END TOP AREA-->
+
+    <!--ABOUT DETAILS AREA-->
+    <section class="about-details-area section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                    <div class="area-title text-center wow fadeIn">
+                        <h2>Our Showroom</h2>
+                        <p>We invite you to experience the beauty and lavish expression that is hallmark of custom furniture created by Interior Woodwork Limited</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <ul class="about-details-menu">
+                        <li class="active"><a data-toggle="tab" href="#abuja" style="font-size: 15px">Abuja Showroom</a></li>
+                        <li><a data-toggle="tab" href="#lagos" style="font-size: 15px">Lagos Showroom</a></li>
+                        <li><a data-toggle="tab" href="#kaduna" style="font-size: 15px">Kaduna Showrrom</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="tab-content about-details-content">
+                        <div id="abuja" class="about-company tab-pane fade in active">
+                            <div class="row">
+                                {% for abujas in abuja %}
+                                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ abujas.image.url }}" alt="">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                            
+                            
+                            <div class="row">
+                            	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.2568008201874!2d7.466603514316702!3d9.040323491301825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b6e5e9841cb%3A0x143b726fb162de03!2sInterior%20Woodwork%20Limited!5e0!3m2!1sen!2sng!4v1595108934428!5m2!1sen!2sng" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="lagos" class="company-history tab-pane fade">
+                             <div class="row">
+                                {% for lago in lagos %}
+                                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ lago.image.url }}" alt="">
+                                        </div>
+                                        
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                
+                            </div>
+                            
+                            <div class="row">
+                            	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.2568008201874!2d7.466603514316702!3d9.040323491301825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b6e5e9841cb%3A0x143b726fb162de03!2sInterior%20Woodwork%20Limited!5e0!3m2!1sen!2sng!4v1595108934428!5m2!1sen!2sng" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
+                            
+                            
+                        </div>
+                        <div id="kaduna" class="company-history tab-pane fade">
+                             <div class="row">
+                                {% for rs in kaduna %}
+                                <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="single-team">
+                                        <div class="member-image">
+                                            <img src="{{ rs.image.url }}" alt="">
+                                        </div>
+                                       
+                                    </div>
+                                {% endfor %}
+                                </div>
+                                
+                            </div>
+                            
+                             <div class="row">
+                            	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.2568008201874!2d7.466603514316702!3d9.040323491301825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b6e5e9841cb%3A0x143b726fb162de03!2sInterior%20Woodwork%20Limited!5e0!3m2!1sen!2sng!4v1595108934428!5m2!1sen!2sng" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--ABOUT DETAILS AREA END-->
+
+   
+
+
+
+    <!--FOOER AREA-->
+{% endblock %}

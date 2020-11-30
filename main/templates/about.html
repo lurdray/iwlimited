@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <header class="top-area single-page" id="home">
+    {% for headers in header %}
+        <div class="top-area-bg" style=" background-image: url({{ headers.image.url }});"></div>
+        {% endfor %}
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+        
+        <div class="welcome-area">
+            <div class="area-bg"></div>
+            <div class="container">
+                <div class="row flex-v-center">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="welcome-text text-center">
+                            <h2>About Us</h2>
+                            <ul class="page-location">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>/</li>
+                                <li><a href="{% url 'service' %}">Services</a></li>
+                            </ul>
+                        </div>
+                        <p class="text-center" style="margin-top: 125px;">Kindly Scroll Down for More!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <!--END TOP AREA-->
+
+    <!--ABOUT AREA-->
+    <section class="about-area gray-bg section-padding" style="background: linear-gradient(to bottom, white,#f2f2f2); color: black">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-12 col-lg-12  col-sm-12 col-xs-12">
+                    <div class="text-center wow fadeIn area-title">
+                        <h2 style="color: #565655">welcome to interior woodwork limited !</h2>
+                        <br>
+                        
+                    </div>
+
+                    <div class=" col-md-12 col-lg-12  col-sm-12 col-xs-12">
+                    <div class="text-center wow fadeIn area-title">
+                        <h4 style="color: #565655;">Company Overview</h4>
+                        <br>
+                        {% for rs in settings %} 
+                        <p style="color: #565655">{{ rs.overview }}</p> 
+                        {% endfor %}
+                    </div>
+                </div> 
+                </div>
+
+                
+           
+
+            <div class="row">
+                <div class="bloging col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                    {% for abouts in about %}
+                    <div class="about-left-content-area wow fadeIn" >
+                        <img src="{{ abouts.image.url }}" alt=""><br><br>
+                        
+                    </div>
+                    {% endfor %}
+                    
+                    
+                </div>
+
+                <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
+                    {% for setting in settings %}
+                    <div class="about-content-area wow fadeIn">
+                        <div class="about-content">
+                            <h2 style="color: #565655">{{ setting.aboutheader| safe }}</h2>
+                            
+                            <p style="color: #565655">{{ setting.aboutus | safe }}
+                            
+                            </p>
+                            
+                       </div>
+                        <div class="about-count">
+                            <div class="single-about-count">
+                                <h4 style="color: #6f448b"><i style="color: #6f448b" class="fa fa-suitcase"></i> {{ setting.project }}</h4>
+                                <h6 style="color: #6f448b">Projects Completed</h6>
+                            </div>
+                            <div class="single-about-count">
+                                <h4 style="color: #6f448b"><i style="color: #6f448b" class="fa fa-trophy"></i> {{ setting.awards }}</h4>
+                                <h6 style="color: #6f448b">Awards</h6>
+                            </div>
+                            <div class="single-about-count">
+                                <h4 style="color: #6f448b"><i style="color: #6f448b" class="fa fa-calendar" aria-hidden="true"></i> {{ setting.years }}</h4>
+                                <h6 style="color: #6f448b">Years of Experience</h6>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--ABOUT AREA END-->
+
+    <!--FAQS AREA-->
+    <section class="faqs-area section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="bloging col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    {% for abts in abt %}
+                    <div class="faqs-left-img">
+                        <img src="{{ abts.image.url }}" alt="">
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="faqs-list">
+                        <h3 style="color: #565655">why choose <span style="color: #565655">Interior Woodwork</span></h3>
+                        <div class="panel-group" id="accordion">
+                            {% for setting in settings %}
+                            <div class="panel active">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title" style="color: #565655">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#faqs_one"><i class="fa fa-minus"></i>OUR VISION</a>
+                                    </h4>
+                                </div>
+                                <div id="faqs_one" class="panel-collapse collapse in">
+                                    <div class="panel-body" style="color: #565655">{{ setting.ourvision|safe }}</div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title" style="color: #565655">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#faqs_two"><i class="fa fa-minus"></i>OUR CORE VALUES</a>
+                                    </h4>
+                                </div>
+                                <div id="faqs_two" class="panel-collapse collapse">
+                                    <div class="panel-body" style="color: #565655;"><p style="font-size: 20px">{{setting.corevalues|safe}}</div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title" style="color: #565655">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#faqs_three"><i class="fa fa-minus"></i>OUR MISSION</a>
+                                    </h4>
+                                </div>
+                                <div id="faqs_three" class="panel-collapse collapse">
+                                    <div class="panel-body" style="color: #565655">{{ setting.ourmision|safe }}</div>
+                                </div>
+                            </div>
+                           {% endfor %} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FAQS AREA END-->
+
+    <!--PROMO AREA-->
+    <section class="promo-area">
+        <div class="promo-bottom-area section-padding">
+            {% for banners in banner %}
+            <div class="promo-botton-area-bg" data-stellar-background-ratio="0.6" style="background-image: url({{ banners.image.url }})"></div>
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 text-center">
+                        <div class="promo-bottom-content wow fadeIn">
+                            <h2>Interior WoodWork Limited</h2>
+                            <a href="{% url 'contact' %}" class="read-more">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PROMO AREA END-->
+
+    
+
+    <!--CLIENTS AREA-->
+    <section class="clients-area section-padding wow fadeIn">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="client-list">
+                        <div class="single-client">
+                            <img src="{% static 'img/client/6.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/3.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/7.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/8.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/1.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/2.jpeg' %}" alt="">
+                        </div>
+
+                        <div class="single-client">
+                            <img src="{% static 'img/client/4.jpeg' %}" alt="">
+                        </div>
+
+                        <div class="single-client">
+                            <img src="{% static 'img/client/5.jpeg' %}" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--CLIENTS AREA END-->
+{% endblock %}

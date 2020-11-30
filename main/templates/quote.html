@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+    button {
+    background-color: purple !important;
+    border: 0 none;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    transition: 2s
+}
+     button:hover {
+    background-color: #292928 !important;
+    color: #fff !important;
+    transform: scale(1.1);
+    transition: 2s
+}
+</style>
+
+<div class="mainmenu-area" id="mainmenu-area" style="background-color: #292928">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+<section class="about-area gray-bg section-padding area-title" style="background: linear-gradient(to bottom, #f2f2f2,white); color: #292928">
+        <div class="container">
+            <h3 class="text-center">Request a Quote</h3>
+            <div class="row" >
+                <p class="container" style="color: #565655">{{ response }}</p>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="quote-form-area wow fadeIn">
+                        <h3>Tell us what you want</h3>
+                        
+                        <div class="contact-form">
+                            <form id="contact-forms" method="post" style="border-color:purple;">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                        <div class="form-group" id="name-field">
+                                            <div class="form-input">
+                                                <input type="text" class="form-control" id="form-name" name="name" placeholder="Name.." required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                        <div class="form-group" id="email-field">
+                                            <div class="form-input">
+                                                <input type="email" class="form-control" id="form-email" name="email" placeholder="Email.." required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="form-group" id="phone-field">
+                                            <div class="form-input">
+                                                <input type="text" class="form-control" id="form-phone" name="phone" placeholder="Phone..">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="form-group" id="">
+                                            <div class="form-input">
+                                                <input type="text" class="form-control" id="" name="address" placeholder="Address..">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="form-group" id="">
+                                            <div class="form-input">
+                                                <input type="text" class="form-control" id="" name="subject" placeholder="Subject..">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="form-group" id="message-field">
+                                            <div class="form-input">
+                                                <textarea class="form-control" rows="6" id="form-message" name="message" placeholder="Your Message Here..." required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <button type="submit">Send</button> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--ABOUT AREA END-->
+
+{% endblock %}

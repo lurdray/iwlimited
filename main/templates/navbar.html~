@@ -1,0 +1,61 @@
+{% load static %}
+
+<nav class="navbar">
+                    <div class="container">
+                        
+                        <div class="navbar-header">
+                            <a href="{% url 'index' %}" class="navbar-brand"><img style="margin-top: -10px;" src="{% static 'img/logo.jpg' %}" alt="logo"></a>
+                        </div>
+                        <div class="search-and-language-bar pull-right">
+                            <ul>
+
+                                <li class="search-box"><i class="fa fa-search"></i></li>
+
+                            </ul>
+                            <form action="#" class="search-form">
+                                <input type="search" name="search" id="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div id="main-nav" class="stellarnav">
+                            <ul id="nav" class="nav navbar-nav">
+                                <li><a href="{% url 'index' %}">home</a>
+                                    
+                                </li>
+                                <li><a href="{% url 'about' %}">about</a>
+                                    
+                                </li>
+                                <li><a href="{% url 'service' %}">Services</a>
+                                    
+                                </li>
+
+                                <li><a href="{% url 'factory' %}">Factory</a>
+                                    
+                                </li>
+                                <li><a href="{% url 'projects' %}">Projects</a>
+                                    
+                                </li>
+                                <li><a href="{% url 'category' %}">Categories</a>
+                                    <ul>
+                                        <li><a href="{% url 'single_category' 'bedroom' %}" style="color: #fff">Bed Room</a></li>
+                                        <li ><a href="{% url 'single_category' 'dinning' %}" style="color: #fff">Dinning</a></li>
+                                         <li><a href="{% url 'single_category' 'door' %}" style="color: #fff">Door</a></li>
+                                        <li><a href="{% url 'single_category' 'kitchen' %}" style="color: #fff">Kitchen</a></li>
+                                        <li><a href="{% url 'single_category' 'living-room' %}" style="color: #fff">Living Room</a></li>
+                                        <li><a href="{% url 'single_category' 'office' %}" style="color: #fff">Office</a></li>           
+                                        <li><a href="{% url 'single_category' 'wardrobe' %}" style="color: #fff">Wardrobes</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                 <li><a href="{% url 'showroom' %}">Showroom</a>
+                                    
+                                </li>
+                                    
+                                </li>
+                                <li><a href="{% url 'contact' %}">Contact</a>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>

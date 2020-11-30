@@ -1,0 +1,544 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!--- PRELOADER -->
+
+    
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <style type="text/css">
+        .bloging:hover{
+            transform: scale(1.05);
+            transition: 1s;
+
+
+        }
+    </style>
+
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area" id="home">
+        <div class="top-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="header-top-area">
+            
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+            <!--END MAINMENU AREA END-->
+        </div>
+
+        <!--HOME SLIDER AREA-->
+        <div class="welcome-slider-area">
+             
+            <div class="welcome-single-slide slider-bg-two" style=" background-image: url({% static 'img/slider/slider13.jpg' %});"  
+            >
+                <div class="container">
+                    <div class="row flex-v-center">
+
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="welcome-text text-center">
+                                <h1 style="font-family: Oswald">interior woodwork limited</h1>
+                                <p style="font-size:18px">Strategically Positioned for Unequalled Customer Experience</p>
+                                <div class="home-button">
+                                    <a href="{% url 'service' %}">Our Services</a>
+                                    <a href="{% url 'contact' %}">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-single-slide slider-bg-two"  style=" background-image: url({% static 'img/slider/office.jpg' %})">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="welcome-text text-center">
+                                <h1>Serve your clients professionally</h1>
+                                <div class="home-button">
+                                    <a href="{% url 'showroom' %}">View Showroom</a>
+                                    <a href="{% url 'about' %}">About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-single-slide slider-bg-two" style=" background-image: url({% static 'img/slider/slider6.jpg' %});"  
+            >
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="welcome-text text-center">
+                                <h1 style="font-family: Oswald">Add extra aesthetics to your kitchen</h1>
+                                <p style="font-size: 18px">We can build an amazing kitchen for you</p>
+                                <div class="home-button">
+                                    <a href="{% url 'factory' %}">Factory</a>
+                                    <a href="{% url 'category' %}">Categories</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="welcome-single-slide slider-bg-three" style=" background-image: url({% static 'img/slider/slider1.jpg' %});">
+                <div class="container">
+                    <div class="row flex-v-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="welcome-text text-center">
+                                <h1>Living Rooms are models for great pride</h1>
+                                <p style="font-size: 18px">Bring life to your living room today</p>
+                                <div class="home-button">
+                                    <a href="{% url 'projects' %}">Our Projects</a>
+                                    <a href="{% url 'contact' %}">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END HOME SLIDER AREA-->
+
+    </header>
+    <!--END TOP AREA-->
+
+    <!--BLOG AREA-->
+    <section class="blog-area gray-bg padding-top">
+
+        <div class="container">
+            <div class="row">
+                
+            <div class="bloging col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+
+
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{{ kitchen.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background-color: #fff">
+                            
+                            <h3><a href="{% url 'single_category' 'kitchen' %}">KITCHEN</a></h3>
+                            
+                            <a href="{% url 'single_category' 'kitchen' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-image">
+                            <img src="{{ living.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background-color: #fff;">
+                            
+                            <h3><a href="{% url 'single_category' 'living-room' %}">LIVING ROOM</a></h3>
+
+                            <a href="{% url 'single_category' 'living-room' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+                
+                
+                    
+                
+            </div>
+
+            <div class="bloging col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+
+
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{{ office.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background-color:  #fff;">
+                           
+                            <h3><a href="{% url 'single_category' 'office' %}">OFFICE</a></h3>
+                            
+                            <a href="{% url 'single_category' 'office' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+                
+
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-image">
+                            <img src="{{ dinning.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background: #fff">
+                            
+                            <h3><a href="{% url 'single_category' 'dinning' %}">DINNING</a></h3>
+                            
+                            <a href="{% url 'single_category' 'dinning' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+                
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-image">
+                            <img src="{{ door.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background: #fff">
+                            
+                            <h3><a href="{% url 'single_category' 'door' %}">DOORS</a></h3>
+                            
+                            <a href="{% url 'single_category' 'door' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="bloging col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+
+
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{{ wardrobe.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background-color:  #fff">
+                            
+                            <h3><a href="{% url 'single_category' 'wardrobe' %}">Wardrobes</a></h3>
+                            
+                            <a href="{% url 'single_category' 'wardrobe' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+                
+
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-image">
+                            <img src="{{ bedroom.image.url }}" alt="">
+                        </div>
+                        <div class="blog-details text-center" style="background-color:  #fff">
+                            
+                            <h3><a href="{% url 'single_category' 'bedroom' %}">BEDROOM</a></h3>
+                            
+                            <a href="{% url 'single_category' 'bedroom' %}" class="read-more">View More</a>
+                        </div>
+                    </div>
+                
+                
+                    
+
+                    
+                
+            </div>
+
+        </div>
+    </div>
+
+    </section>
+    <!--BLOG AREA END-->
+
+    <!--ABOUT AREA-->
+    <br><br>
+    <section class="about-area gray-bg section-padding area-title" style="background: linear-gradient(to bottom, white,#f2f2f2); color: #292928">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12">
+                    <div class="about-content-area wow fadeIn">
+                        <div class="about-content text-center">
+                            <h2 style="color: #565655">We have years of experience in this passion</h2>
+                            <p style="color: #565655; font-size: 15px">We are a global supplier of top quality furniture, creating satisfied customers while providing an optimum work environment and giving the best possible returns to our stake holders in woodwork industry, we have been in full production since 1998.<br><br> Interior Woodwork was founded on the principles of "Indigenous Excellence"...</p>
+                            <a href="{% url 'about' %}" class="read-more">read more <i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <div class="about-count">
+                            <div class="single-about-count">
+                                <h4 style="color:  #565655"><i class="fa fa-suitcase"></i> 962</h4>
+                                <h6 style="color:  #565655">Projects Completed</h6>
+                            </div>
+                            <div class="single-about-count">
+                                <h4 style="color:  #565655"><i class="fa fa-trophy"> 15</i></h4>
+                                <h6 style="color:  #565655">Awards</h6>
+                            </div>
+                            <div class="single-about-count">
+                                <h4 style="color:  #565655"><i class="fa fa-users"></i> 789</h4>
+                                <h6 style="color: #565655">Satisfied Customers</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--ABOUT AREA END-->
+
+    <!--SERVICE AREA-->
+    <section class="service-area">
+        <div class="service-top-area padding-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                        <div class="area-title text-center wow fadeIn">
+                            <h2 style="color: #565655">Our Services</h2>
+                            <p style="color: #565655;">We are a customer centric company, with an excellent service delivery mindset determined to carry out what we do with a sense of urgency and purpose</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="service-content wow fadeIn">
+                            <h2 style="color: #565655">Our Brand</h2>
+                            <p style="color: #565655">A brand with deep roots in the furniture industry. Interior Woodwork Limited is the expert based furniture brand that provides a gratifying experience, a brand feel and image, where details matter - we design products with variety of styles while serving the needs of the industry. Combining our rich history along with our extensive knowledge makes us well positioned to lead the industry</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="service-catalouge-content-area wow fadeIn">
+                            <div class="service-catalouge-bg"></div>
+                            <div class="row">
+                                <div class="bloging">
+                                <div  style=" background: rgba(0, 0, 0, 0) url({% static 'img/service/service.jpg' %}) no-repeat scroll center center / contain; position: relative;">
+
+                                    <div class="catalouge-content">
+                                        <h3>Why Choose Us ?</h3>
+                                       
+                                        <ul>
+                                            <li><i class="fa fa-check"></i> We are first when it comes to quality furniture.</li>
+                                            <li><i class="fa fa-check"></i> Our designs are completely homemade and 100% original.</li>
+                                            <li><i class="fa fa-check"></i> Keeping our clients satisfied is our topmost priority.</li>
+                                            <li><i class="fa fa-check"></i>We have furniture to meet your taste and pocket.</li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                <div  style=" background: rgba(0, 0, 0, 0) url({% static 'img/service/service0.jpg' %}) no-repeat scroll center center / contain; position: relative;">
+
+                                    <div class="catalouge-content ">
+                                        <h3>Why Choose Us ?</h3>
+                                       
+                                        <ul>
+                                            <li><i class="fa fa-check"></i> We are first when it comes to quality furniture.</li>
+                                            <li><i class="fa fa-check"></i> Our designs are completely homemade and 100% original.</li>
+                                            <li><i class="fa fa-check"></i> Keeping our clients satisfied is our topmost priority.</li>
+                                            <li><i class="fa fa-check"></i>We have furniture to meet your taste and pocket.</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-bottom-area section-padding">
+
+            <div class="service-bottom-area-bg"  style=" background-image: url({% static 'img/service/service-area-bg1.jpg' %})"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-md-offset-6 col-lg-offset-6 col-sm-12 col-xs-12">
+                        <div class="service-list wow fadeIn">
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon">
+                                            <i class="fa fa-industry"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Our Factory</h4>
+                                    <p>Committed to the hightest standards possible, German machines, in modern woodworking quality is not a wish. It's about machine-power. Proudly Nigerian!</p>
+                                    <a href="{% url 'factory' %}">View Factory</a>
+                                    <hr style="color: #565655">
+                                </div>
+                            </div>
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon"><i class="fa fa-dropbox"></i></div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Our Showroom</h4>
+                                    <p>We invite you to experience the beauty and lavish expression that is hallmark of custom furniture created by Interior Woodwork Limited</p>
+                                    <a href="{% url 'showroom' %}">View Showroom</a>
+                                    <hr style="color: #565655">
+                                </div>
+                            </div>
+                            <div class="single-service">
+                                <div class="service-icon-hexagon">
+                                    <div class="hex">
+                                        <div class="service-icon"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>
+                                </div>
+                                <div class="service-details">
+                                    <h4>Our Brand</h4>
+                                    <p>A brand with deep roots in the furniture industry. Interior Woodwork Limited is the expert based furniture brand that provides a gratifying experience, a brand feel and image, where details matter - we design products with variety of styles while serving the needs of the inducstry. Combining our rich history along with our extensive knownledge makes us well positioned to lead the industry</p>
+                                    
+                                    <hr style="color: #565655">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SERVICE AREA END-->
+
+    <!--PROMO AREA-->
+    <section class="promo-area">
+        <br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                        <div class="single-promo">
+                            <div class="promo-icon"><i style="color:  #565655" class="fa fa-map-marker"></i></div>
+                            <div class="promo-details">
+                                <h3 style="color:  #565655">Our Location</h3>
+                                <p>Plot 58, Idu Industrial Layout, Idu Phase 1, Karmo, Abuja.</p>
+                            </div>
+                        </div>
+                        <div class="single-promo">
+                            <div class="promo-icon"><i style="color:  #565655" class="fa fa-newspaper-o"></i></div>
+                            <div class="promo-details">
+                                <a href="#">
+                                <h3 style="color:  #565655">Latest News</h3>
+                                <p>We bring you the latest from our blog</p>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                        <div class="single-promo">
+                            <div class="promo-icon"><i style="color:  #565655" class="fa fa-phone"></i></div>
+                            <div class="promo-details">
+                                <h3 style="color: #565655">24/7 Support</h3>
+                                <h5><a href="">
+                                (+234) 811 733 7992</a></h5>
+                            </div>
+                        </div>
+                        <div class="single-promo">
+                            <div class="promo-icon"><i style="color:  #565655" class="fa fa-truck"></i></div>
+                            <div class="promo-details">
+                                <h3 style="color:  #565655">Fast Delivery</h3>
+                                <p>We go the extra mile to ensure your dream furniture is delivered in time..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                        <div class="contact-image text-center">
+                            <img src="{% static 'img/promo/promo_troli.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="promo-bottom-area section-padding">
+            <div class="promo-botton-area-bg" data-stellar-background-ratio="0.6" style="background-image: url({% static 'img/promo/promo_bottom_bg1.jpg' %})"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 text-center">
+                        <div class="promo-bottom-content wow fadeIn">
+                            <h2>Interior WoodWork Limited</h2>
+                            <a href="{% url 'contact' %}" class="read-more">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PROMO AREA END-->
+  
+
+     <section class="blog-area blog-page gray-bg section-padding">
+        <div class="container">
+            <div class="row">
+                <h3 style="color:  #565655" class="text-center">OUR PROCESSES ARE EASY</h3>
+                <p style="color:  #565655" class="text-center">From start to finish, Our promise is 100%</p><br>
+                
+
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/install1.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="single-blog.html">Client Brief</a></h3>
+                            <p>The manufacturing process with a consultation with the client and a possible visitation to the client’s facility to inspect and take measurements.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/install2.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="single-blog.html">REVIEW/ DESIGN</a></h3>
+                            <p>At this stage, the Interior Woodwork design team conceptualizes and prepares drawings in 3D format to give the client a live view of what the finished furniture will look like.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/install3.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            <h3><a href="single-blog.html">PRODUCTION</a></h3>
+                            <p>The Production team disintegrates the design into modules before interpretation into dimensions for cutting and assembly and the installation for the client.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+                
+                <h3 style="color: #565655" class="text-center">Our Partners</h3>
+                <p style="color:  #565655" class="text-center">We work with the best in the Industry Worldwide</p><br>
+                
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="client-list">
+                        <div class="single-client">
+                            <img src="{% static 'img/client/6.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/3.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/7.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/8.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/1.jpeg' %}" alt="">
+                        </div>
+                        <div class="single-client">
+                            <img src="{% static 'img/client/2.jpeg' %}" alt="">
+                        </div>
+
+                        <div class="single-client">
+                            <img src="{% static 'img/client/4.jpeg' %}" alt="">
+                        </div>
+
+                        <div class="single-client">
+                            <img src="{% static 'img/client/5.jpeg' %}" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--CLIENTS AREA END-->
+  
+       
+
+{% endblock %}

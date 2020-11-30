@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+        .single-blog{
+            position: relative;
+
+
+            height: 375px;
+            width: 360px;
+
+            transition: 0.3s ease-out;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+        }
+        .single-blog .blog-image{
+            position: relative;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .single-blog .blog-image img{
+            position: relative;
+            top: 0;
+
+            width: 100%;
+            height: 90%;
+            display: block;
+            transition: 0.9s;
+        }
+        .single-blog .blog-details1{
+            position: absolute;
+            bottom: 0;
+
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            background-color: purple;
+            color: #fff;
+            transition: all 0.9s cubic-bezier(.48, -0.28, 0.41, 1.4);
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        .single-blog:hover .blog-details1{
+            width: 100%;
+            height: 75%;
+            transition: 0.9s;
+            bottom: 0;
+
+        }
+
+        
+    </style>
+       <header class="top-area single-page" id="home">
+        <div class="top-area-bg" style=" background-image: url({% static 'img/slider/slider4.jpg' %});"></div>
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+
+        <div class="welcome-area">
+            <div class="area-bg"></div>
+            <div class="container">
+                <div class="row flex-v-center">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="welcome-text text-center">
+                            <h2>Our Services</h2>
+                            <ul class="page-location">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>/</li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!--SERVICE AREA-->
+    <section class="service-area-two section-padding gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                    <div class="area-title text-center wow fadeIn">
+                        <h2 style="color: purple">Our Services</h2>
+                        <p style="color:black"><strong>We are a customer centric company, with an excellent service delivery mindset determined to carry out what we do with a sense of urgency and purpose</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="service-two-content wow fadeIn">
+                        <div class="row no-margin">
+                            <div class="col-md-12 col-lg-12 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border">
+                                    <div class="service-icon-two"><i class="fa fa-truck"></i></div>
+                                    <h4>Fast Delivery</h4>
+                                    <p>At IWL, delivery is much more than just a service, it is an extension of our customer care, a medium in which we go the extra mile to ensure furniture gets to you in time.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border-top border-bottom border-right">
+                                    <div class="service-icon-two"><i class="fa fa-plug"></i></div>
+                                     <h4>Installation</h4>
+                                    <p>Our team is a symbiotic relationship of Architects, Technicians and handy men. We aim to bring joy into the given space through assembling to every level of design detail.</p>
+                                   
+                                </div>
+                            </div>
+
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border-left border-right border-bottom">
+                                    <div class="service-icon-two"><i class="fa fa-bar-chart"></i></div>
+                                    <h4>Measurement</h4>
+                                    <p>Space is our medium for design, therefore; taking accurate dimensions are vital to our team which includes an Architect.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 col-lg-12 col-sm-6 col-xs-12 no-padding">
+                                <div class="single-service-two border-left border-right border-bottom">
+                                    <div class="service-icon-two"><i class="fa fa-cogs"></i></div>
+                                     <h4>Design</h4>
+                                    <p>The professional Design Team at Interior Woodwork is incredibly diverse. Our interior designers are able to complete any task given to our client's elation<p style="color: purple"></p></p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SERVICE AREA END-->
+
+    <!--PROMO AREA-->
+    <section class="promo-area">
+        <div class="promo-bottom-area section-padding">
+            <div class="promo-botton-area-bg" data-stellar-background-ratio="0.6" style="background-image: url({% static 'img/promo/promo_bottom_bg1.jpg' %})"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 col-sm-12 col-xs-12 text-center">
+                        <div class="promo-bottom-content wow fadeIn">
+                            <h2>Interior woodwork limited</h2>
+                            <a href="{% url 'contact' %}" class="read-more">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PROMO AREA END-->
+
+    <!--BLOG AREA-->
+     <section class="blog-area gray-bg padding-top">
+
+        <div class="container">
+            <div class="row">
+                
+            <div class="bloging col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+
+
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/blog.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="{% url 'single_category' 'kitchen' %}">KITCHEN</a></h3>
+                            <p class="text-center">Kitechens have grown to represent more than the cook centre of the home. it is now an entertainment centre, a comfort zone, a place where families meet to have fun and where dreams not just meals are made.</p>
+                            <a href="{% url 'single_category' 'kitchen' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/blog2.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="{% url 'single_category' 'living-room' %}">LIVING ROOM</a></h3>
+                            <p class="text-center">This is where stories are shared, friends and guest entertained and also, where we present ourself. At IWL, there's a furniture to meet your elation for every sigle one of those functions</p>
+                            <a href="{% url 'single_category' 'living-room' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            <div class="bloging col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+
+
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/office.jpeg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                           
+                            <h3><a href="{% url 'single_category' 'office' %}">OFFICE</a></h3>
+                            <p>Five men can shift a car together, but one man in a crane can stack five cars on tope of each other. Our office furnitures are machines, designed to make every office work easier and relatively stress free.</p>
+                            <a href="{% url 'single_category' 'office' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+                
+
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/dining.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="{% url 'single_category' 'dinning' %}">DINING</a></h3>
+                            <p class="text-center">Reap the reward of a fantastic kitchen in comfort and in style, share a meal with family, friends and guest in comfort and in style, We are comfort, we are style, dinings at Interior Woodwork Limited</p>
+                            <a href="{% url 'single_category' 'dinning' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+                
+                
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/door7.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="{% url 'single_category' 'door' %}">DOORS</a></h3>
+                            <p class="text-center">Opening doors never felt so good!. at IWL we make intaractions with your doors much more fun</p>                            
+                            <a href="{% url 'single_category' 'door' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="bloging col-md-4 col-lg-4 col-sm-6 col-xs-12">
+
+
+
+                    <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/wardrobe.jpeg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="{% url 'single_category' 'wardrobe' %}">Wardrobes</a></h3>
+                            <p>At Interior Woodwork Limited we help you display your clothes, shoes and belongings in style.</p>
+                            <a href="{% url 'single_category' 'wardrobe' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+                
+
+                
+                     <div class="single-blog wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-image">
+                            <img src="{% static 'img/blog/blog3.jpg' %}" alt="">
+                        </div>
+                        <div class="blog-details text-center">
+                            
+                            <h3><a href="{% url 'single_category' 'bedroom' %}">BEDROOM</a></h3>
+                            <p class="text-center" style="padding: 2px">The beginning and the end of everyday life. with our viriety of beds; STORAGE, OTTOMAN, DIVAN AND BUNK BEDS, the team at IWL can guarantee you an extra-ordinary life, everyday.</p>
+                            <a href="{% url 'single_category' 'bedroom' %}" class="read-more">Collection</a>
+                        </div>
+                    </div>
+                
+                
+            </div>
+
+        </div>
+    </div>
+
+    </section>
+    <br><br>
+    <!--BLOG AREA END-->
+    <style type="text/css">
+        .single-blog{
+            position: relative;
+            height: 390px;
+            width: 100%;
+
+            transition: 0.3s ease-out;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+        }
+        .single-blog .blog-image{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .single-blog .blog-image img{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            display: block;
+            transition: 0.5s;
+        }
+        .single-blog .blog-details{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            padding: 12px;
+            background-color: purple;
+            color: #fff;
+            transition: all 0.5s cubic-bezier(.48, -0.28, 0.41, 1.4);
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        .single-blog:hover .blog-details{
+            width: 100%;
+            height: 75%;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        
+    </style>
+
+
+    
+
+    {% endblock %}

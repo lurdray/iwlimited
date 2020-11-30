@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area single-page" id="home">
+         {% for headers in header %}
+        <div class="top-area-bg" style=" background-image: url({{ headers.image.url }});"></div>
+        {% endfor %}
+        <div class="header-top-area">
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                {% include 'navbar.html' %}
+            </div>
+
+        <div class="welcome-area">
+            <div class="area-bg"></div>
+            <div class="container">
+                <div class="row flex-v-center">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="welcome-text text-center">
+                            <h2>Our Factory</h2>
+                            <ul class="page-location">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li>/</li>
+                                <li><a href="{% url 'category' %}">Categories</a></li>
+                            </ul>
+                        </div>
+                        <p class="text-center" style="margin-top: 125px;">Kindly Scroll Down for More!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--END TOP AREA-->
+
+    <section class="" style="background-color: #f2f2f2;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 col-sm-12 col-xs-12">
+                    <div class="area-title text-center wow fadeIn"><br><br>
+                        <h2 style="color: #565655">Our Factory</h2>
+                        <p style="color: #565655">Our 20,000SqFt manufacturing facility is located in Idu layout, Abuja FCT where we provide an excellent base for distribution of products to customers throughout Africa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style type="text/css">
+        .blog-image{
+            transition: 2s;
+            box-shadow: 1px 9px 40px 12px rgba(0,0,0,0.5);
+            transform: scale(0.98);
+            background-color: purple;
+        }
+        .blog-image:hover{
+            box-shadow: -1px 9px 40px -12px rgba(255,110,110,0.9);
+            transform: scale(1.25);
+            transition: 2s;
+        }
+    </style>
+
+    <!--BLOG AREA-->
+    <section class="blog-area blog-page gray-bg section-padding" style="background-color: white">
+        <div class="container">
+            <div class="row">
+
+                {% if items %}
+                    {% for item in items %}
+
+                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                            <div class="single-blog wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="blog-image">
+                                    <img src="{{ item.image.url }}" alt="">
+                                </div>
+                            </div>
+                             <p class="text-center" style="font-size: 25px; color: black">{{item.title}}</p>
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+                <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                    <p>Sorry, Nothing Yet</p>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </section>
+    <!--BLOG AREA END-->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15760.235730772929!2d7.3384022!3d9.0583893!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf81007ee4455b292!2sInterior%20Woodworks%20Limited!5e0!3m2!1sen!2sng!4v1605811260658!5m2!1sen!2sng" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+{% endblock %}
